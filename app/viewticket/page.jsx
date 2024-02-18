@@ -2,7 +2,7 @@
 import Image from "next/image"
 import { useSearchParams } from "next/navigation"
 import QRCode from "qrcode.react"
-import { useEffect, useState } from "react"
+import { Suspense, useEffect, useState } from "react"
 import html2canvas from 'html2canvas';
 
 
@@ -53,6 +53,8 @@ function Page() {
     };
   
   return (
+    <Suspense fallback={<div>Loading...</div>}>
+
     <main className="flex min-h-screen flex-col items-center justify-between p-2 md:p-24 gap-8 ">
         <div className="flex flex-col gap-4 justify-center">
     <div id="ticket" className="bg-white  p-2 md:p-8 rounded flex flex-col items-center ">
@@ -73,6 +75,7 @@ function Page() {
     <button className="bg-blue-500 text-white p-2 rounded" onClick={handleCapture}>Download</button>
         </div>
   </main>
+  </Suspense>
   )
 }
 

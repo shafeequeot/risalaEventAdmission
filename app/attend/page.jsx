@@ -1,7 +1,7 @@
 'use client'
 
 import { useSearchParams } from "next/navigation"
-import { useState } from "react"
+import { Suspense, useState } from "react"
 
 function Page() {
 
@@ -36,6 +36,8 @@ function Page() {
         }
     }
   return (
+    <Suspense fallback={<div>Loading...</div>}>
+
         <div className="h-screen w-full flex items-center justify-center">
     <form onSubmit={handleSubmit} className="bg-white p-2 md:p-8 rounded-md shadow-md w-full md:w-96 justify-center items-center ">
 
@@ -48,6 +50,7 @@ function Page() {
     {result && result.toString()}
   </form>
         </div>
+        </Suspense>
   )
 }
 
