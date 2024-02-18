@@ -1,6 +1,5 @@
 'use client'
 import {  useRouter } from "next/navigation";
-import QRCode from "qrcode.react";
 import { useState } from "react";
 
 function Form() {

@@ -7,14 +7,19 @@ import html2canvas from 'html2canvas';
 
 
 function Page() {
-    const searchquery = useSearchParams()
+
+    let searchquery
+    if (typeof window !== 'undefined'){
+      searchquery = useSearchParams()
+    }
+
     const [user, setUser]= useState({})
     const [image, setImage] = useState(null);
 
     useEffect(()=>{
         const id = searchquery.get('id')
         const name = searchquery.get('name')
-        const website = process.env.WEBSITE
+        const website = process?.env?.NEXT_PUBLIC_WEBSITE
         setUser({id, name, website})
     },[])
 
@@ -66,7 +71,7 @@ function Page() {
     </div>
       <h1 className="text-2xl font-semibold text-blue-500 max-w-96">{user?.name}</h1>
       <span className="text-xs text-gray-700 mb-4">Your id: {String(user?.id).padStart(6, 0)}</span>
-      <QRCode value={`${process.env.WEBSITE}/attend?id=${user?.id}`}/>
+      <QRCode value={`${process?.env?.NEXT_PUBLIC_WEBSITE}/attend?id=${user?.id}`}/>
       <h1 className="text-2xl font-semibold text-blue-500 max-w-96 mt-4">YOUR ENTRY TICKET</h1>
       <span className="text-xs text-gray-700">{user?.website}</span>
 
