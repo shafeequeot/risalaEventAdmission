@@ -41,7 +41,7 @@ function Page() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
 
-        {/* <div className="h-screen w-full flex items-center justify-center">
+        <div className="h-screen w-full flex items-center justify-center">
     <form onSubmit={handleSubmit} className="bg-white p-2 md:p-8 rounded-md shadow-md w-full md:w-96 justify-center items-center ">
 
     <h2 className="text-2xl font-bold mb-6 text-gray-800">Attendendance</h2>
@@ -52,7 +52,7 @@ function Page() {
     <button disabled={loading} type="submit" className="w-full bg-blue-500 hover:bg-blue-600 text-white  font-bold py-2 rounded-md focus:outline-none focus:shadow-outline">Submit</button>
     {result && result.toString()}
   </form>
-        </div> */}
+        </div>
         </Suspense>
   )
 }
