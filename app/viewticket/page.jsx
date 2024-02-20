@@ -34,7 +34,7 @@ function Page() {
           link.href = dataUrl;
           link.download = `${user?.id}_${user?.name}`;
           link.click();
-          setFormresult("Data updated...")
+          setFormresult("Image downloaded")
         })
         .catch(error => {
           console.error('Error converting image:', error);

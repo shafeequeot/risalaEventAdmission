@@ -24,6 +24,16 @@ function Form() {
         }));
       };
       const router = useRouter()
+
+      const emiratesList = [
+        { name: "Abu Dhabi", image: "path/to/abu-dhabi-image.jpg" },
+        { name: "Dubai", image: "path/to/dubai-image.jpg" },
+        { name: "Sharjah", image: "path/to/sharjah-image.jpg" },
+        { name: "Ajman", image: "path/to/ajman-image.jpg" },
+        { name: "Umm Al Quwain", image: "path/to/umm-al-quwain-image.jpg" },
+        { name: "Ras Al Khaimah", image: "path/to/ras-al-khaimah-image.jpg" },
+        { name: "Fujairah", image: "path/to/fujairah-image.jpg" },
+      ];
       
 
       const handleSubmit = async e => {
@@ -65,9 +75,18 @@ function Form() {
                 <input type="text" name="designation" value={formData.designation} onChange={handleChange} placeholder="Designation" className="w-full px-3 py-2 rounded-md bg-white   focus:outline-none  focus:bg-blue-100" />
               </div>
               <div className="mb-6">
-                <input type="text" name="emirates" value={formData.emirates} onChange={handleChange} placeholder="Emirates" className="w-full px-3 py-2 rounded-md bg-white   focus:outline-none  focus:bg-blue-100" />
+                <select type="text" name="emirates" value={formData.emirates} onChange={handleChange} placeholder="Emirates" 
+                className="w-full px-3 py-2 rounded-md bg-white   focus:outline-none  focus:bg-blue-100" >
+                  {
+                    emiratesList.map(em=>
+                      <option value={em.name}>{em.name}</option>
+                      )
+                  }
+                  </select>
               </div>
-              <button disabled={loadng} type="submit" className="w-full bg-blue-500 hover:bg-blue-600 text-white  font-bold py-2 rounded-md focus:outline-none focus:shadow-outline">Submit</button>
+              <button disabled={loadng} type="submit" className="w-full disabled:bg-gray-300 bg-blue-500 hover:bg-blue-600 text-white  font-bold py-2 rounded-md focus:outline-none focus:shadow-outline">
+                {loadng ? "loading.." : "Submit"}
+              </button>
             </form>
 
   )
