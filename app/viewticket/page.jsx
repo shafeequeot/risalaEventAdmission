@@ -3,7 +3,6 @@ import Image from "next/image"
 import { useSearchParams } from "next/navigation"
 import QRCode from "qrcode.react"
 import { Suspense, useEffect, useRef, useState } from "react"
-import html2canvas from 'html2canvas';
 import domtoimage from 'dom-to-image';
 
 
@@ -15,6 +14,7 @@ function Page() {
   }
 
   const [user, setUser] = useState({})
+  const [formresult, setFormresult] = useState("")
 
   useEffect(() => {
     const id = searchquery.get('id')
@@ -27,16 +27,19 @@ function Page() {
 
   const handleCapture = async () => {
     if (divRef.current) {
+      setFormresult("Loading...")
       domtoimage.toPng(divRef.current)
         .then(dataUrl => {
           const link = document.createElement('a');
           link.href = dataUrl;
           link.download = `${user?.id}_${user?.name}`;
           link.click();
+          setFormresult("Data updated...")
         })
         .catch(error => {
           console.error('Error converting image:', error);
-        });
+          setFormresult("Error converting image")
+        })
     }
   };
 
@@ -62,6 +65,7 @@ function Page() {
           </div>
 
           <button className="bg-blue-500 text-white p-2 rounded" onClick={handleCapture}>Download</button>
+          {formresult}
         </div>
       </main>
     </Suspense>

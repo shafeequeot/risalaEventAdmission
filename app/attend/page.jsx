@@ -18,7 +18,7 @@ function Page() {
         e.preventDefault();
         setLoading(true)
         try{
-            setResult("")
+            setResult("loading...")
 
             if((process.env.NEXT_PUBLIC_PASSWORD) != (String(password).toLowerCase())) throw new Error('wrong password')
             
