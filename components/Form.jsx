@@ -26,6 +26,7 @@ function Form() {
       const router = useRouter()
 
       const emiratesList = [
+        { name: "Select Your Emirate", image: "path/to/abu-dhabi-image.jpg" },
         { name: "Abu Dhabi", image: "path/to/abu-dhabi-image.jpg" },
         { name: "Dubai", image: "path/to/dubai-image.jpg" },
         { name: "Sharjah", image: "path/to/sharjah-image.jpg" },
