@@ -51,7 +51,7 @@ function Page() {
       <main className="flex min-h-screen flex-col items-center justify-between p-2 md:p-24 gap-4 ">
         <div className="flex flex-col gap-4 justify-center ">
           <div id="ticket" ref={divRef} style={{height: 450, width: 370}} className=" p-2 md:p-8 rounded flex flex-col items-center relative">
-          <Image className="absolute top-0 -z-10" src="/qr code rev 3.jpg" alt="qr background" width={820} height={1200}/>
+          <Image className="absolute top-0 -z-10" src="/qrcodeModel.jpg" alt="qr background" width={820} height={1200}/>
 
             <div className="h-44 mt-32 w-48  flex flex-col items-center justify-center">
 

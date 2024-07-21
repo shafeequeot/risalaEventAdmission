@@ -16,14 +16,14 @@ export default function Home() {
       <div className="flex md:flex-row gap-4 items-center flex-col">
         <div className="flex-1 flex flex-col gap-2 md:gap-12">
           {/* <h1 className="text-2xl md:text-5xl text-blue-600 font-bold italic">Texcellence</h1> */}
-        <Image src="/Form logo.png" width={300} height={300} />
-          <span className="text-gray-500">Where tech Enthusiasm Meets Innovation</span>
+        {/* <Image src="/Form logo.png" width={300} height={300} /> */}
+          <span className="text-gray-500">Carrier connect</span>
 
           <div className="flex flex-col">
             <span className="text-xs text-gray-500">Date </span>
-            <span className="text-2xl text-blue-600 uppercase">MAR 03, 2024</span>
+            <span className="text-2xl text-blue-600 uppercase">AUG 04, 2024</span>
             <span className="text-xs text-gray-500">Location</span>
-            <span className="text-2xl text-blue-600 uppercase">Dubai, UAE</span>
+            <span className="text-2xl text-blue-600 uppercase">Karama, Dubai, UAE</span>
           </div>
         </div>
         <div className="flex-1">
