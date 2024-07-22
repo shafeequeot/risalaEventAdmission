@@ -45,7 +45,7 @@ function Form() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
-    })
+    }).catch(e => console.log(e))
 
     const user = await result.json()
 
@@ -77,27 +77,27 @@ function Form() {
         Visa Status
         <label>Visit Visa
 
-          <input type="radio" name="visa" value={formData.visa} checked={formData.visa == 'visit'} onChange={()=>handleChange({target: {value: 'visit', name: 'visa'}})} className=" bg-white   focus:outline-none  focus:bg-blue-100" />
+          <input type="radio" name="visa" value={formData.visa} checked={formData.visa == 'visit'} onChange={() => handleChange({ target: { value: 'visit', name: 'visa' } })} className=" bg-white   focus:outline-none  focus:bg-blue-100" />
         </label>
         <label>
           Employment Visa
-          <input type="radio" name="visa" value={formData.visa} checked={formData.visa == 'employment'} onChange={()=>handleChange({target: {value: 'employment', name: 'visa'}})} className=" bg-white   focus:outline-none  focus:bg-blue-100" />
+          <input type="radio" name="visa" value={formData.visa} checked={formData.visa == 'employment'} onChange={() => handleChange({ target: { value: 'employment', name: 'visa' } })} className=" bg-white   focus:outline-none  focus:bg-blue-100" />
         </label>
       </div>
       <div className="mb-4 flex gap-4 text-sm">
         Current Job Status
         <label>Working
 
-          <input type="radio" name="job" value={formData.job} checked={formData.job == 'working'} onChange={()=>handleChange({target: {value: 'working', name: 'job'}})} className=" bg-white   focus:outline-none  focus:bg-blue-100" />
+          <input type="radio" name="job"  checked={formData.job == 'working'} onChange={() => handleChange({ target: { value: 'working', name: 'job' } })} className=" bg-white   focus:outline-none  focus:bg-blue-100" />
         </label>
         <label>
           Emp. Visa
-          <input type="radio" name="job" value={formData.job} checked={formData.job == 'unemployed'} onChange={()=>handleChange({target: {value: 'unemployed', name: 'job'}})} className=" bg-white   focus:outline-none  focus:bg-blue-100" />
-        </label>job
+          <input type="radio" name="job"  checked={formData.job == 'unemployed'} onChange={() => handleChange({ target: { value: 'unemployed', name: 'job' } })} className=" bg-white   focus:outline-none  focus:bg-blue-100" />
+        </label>
       </div>
-    
+
       <div className="mb-4">
-        <input type="text" name="qualification " value={formData.qualification} onChange={handleChange} placeholder="Qualification " className="w-full px-3 py-2 rounded-md bg-white   focus:outline-none  focus:bg-blue-100" />
+        <input type="text" name="qualification" value={formData.qualification} onChange={handleChange} placeholder="Qualification " className="w-full px-3 py-2 rounded-md bg-white   focus:outline-none  focus:bg-blue-100" />
       </div>
       <div className="mb-6">
         <select type="text" name="emirates" value={formData.emirates} onChange={handleChange} placeholder="Emirates"

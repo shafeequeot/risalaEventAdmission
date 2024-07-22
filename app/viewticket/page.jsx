@@ -51,14 +51,14 @@ function Page() {
       <main className="flex min-h-screen flex-col items-center justify-between p-2 md:p-24 gap-4 ">
         <div className="flex flex-col gap-4 justify-center ">
           <div id="ticket" ref={divRef} style={{height: 450, width: 370}} className=" p-2 md:p-8 rounded flex flex-col items-center relative">
-          <Image className="absolute top-0 -z-10" src="/qrcodeModel.jpg" alt="qr background" width={820} height={1200}/>
+          <Image className="absolute top-0 -z-10" src="/20240719_104044 (2)aa.jpg" alt="qr background" width={900} height={1200}/>
 
-            <div className="h-44 mt-32 w-48  flex flex-col items-center justify-center">
+            <div className="h-44 mt-12 w-48  flex flex-col items-center justify-center">
 
 
              <span className="font-semibold text-blue-500 line-clamp-2 leading-4 text-center w-32 ">{user?.name}</span>
             <span className="text-xs text-gray-700 mb-4">Your id: {String(user?.id).padStart(6, 0)}</span> 
-            <QRCode style={{width: 100, height: 100}} value={`${process?.env?.NEXT_PUBLIC_WEBSITE}/attend?id=${user?.id}`} />
+            <QRCode style={{width: 80, height: 80}} value={`${process?.env?.NEXT_PUBLIC_WEBSITE}/attend?id=${user?.id}`} />
         
             </div>
 
